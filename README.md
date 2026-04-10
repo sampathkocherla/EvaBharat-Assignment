@@ -1,16 +1,159 @@
-# React + Vite
+ # 🚀 GitHub User Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based application that allows users to search GitHub profiles and explore their repositories with sorting and filtering options.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Features
 
-## React Compiler
+### 🔍 User Search
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Search GitHub users using username
+* Displays:
 
-## Expanding the ESLint configuration
+  * Username
+  * Profile avatar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📂 Repository List
+
+* Click on a user to view their repositories
+* Displays:
+
+  * Repository name
+  * Description
+  * ⭐ Stars count
+  * 🍴 Forks count
+  * 🧑‍💻 Language used
+
+### ⚡ Search Optimization
+
+* Implemented **Debouncing (400ms delay)**
+* Reduces unnecessary API calls while typing
+
+### 🔧 Sorting & Filtering
+
+* Sort repositories by:
+
+  * ⭐ Stars
+  * 🍴 Forks
+* Filter repositories by programming language
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React (Vite)
+* **State Management:** React Hooks (`useState`, `useEffect`, `useMemo`)
+* **API:** GitHub REST API
+* **Styling:** CSS
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+ ┣ components/
+ ┃ ┣ SearchBar.jsx
+ ┃ ┣ UserList.jsx
+ ┃ ┣ RepoControls.jsx
+ ┃ ┗ RepoList.jsx
+ ┣ App.jsx
+ ┣ App.css
+ ┗ main.jsx
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd evabharat-assignment
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+```
+
+### 4. Open in browser
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🌐 API Endpoints Used
+
+* 🔍 Search Users
+
+  ```
+  https://api.github.com/search/users?q={query}
+  ```
+
+* 📂 Get User Repositories
+
+  ```
+  https://api.github.com/users/{username}/repos
+  ```
+
+---
+
+## ⚠️ Note on API Rate Limiting
+
+GitHub limits unauthenticated API requests.
+If you encounter:
+
+```
+API rate limit exceeded
+```
+
+* Wait for some time and retry
+* Or use authenticated requests via backend (recommended for production)
+
+---
+
+## 💡 Future Improvements
+
+* 🔄 Pagination for repositories
+* 🔐 Backend integration with GitHub token
+* 🎨 UI enhancement using Tailwind CSS
+* 🔎 Search suggestions dropdown
+* 📊 Advanced filtering options
+
+---
+
+## 🧠 Key Learnings
+
+* Handling API calls with proper error handling
+* Implementing debouncing in React
+* Optimizing performance using `useMemo`
+* Building reusable and modular components
+* Managing multiple states efficiently
+
+---
+
+## 👨‍💻 Author
+
+**Sampath**
+Full Stack Developer (MERN)
+
+---
+
+## ⭐ Acknowledgements
+
+* GitHub REST API
+* React Documentation
+
+---
